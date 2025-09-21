@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: eks-massai-mara
+  name: eks-massai-mara
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: eks-massai-mara
+  template:
+    metadata:
+      labels:
+        app: eks-massai-mara
+    spec:
+      containers:
+      - image: 030749258773.dkr.ecr.ap-northeast-2.amazonaws.com/k8s-cluster-repo:v3.0
+        name: eks-massai-mara
